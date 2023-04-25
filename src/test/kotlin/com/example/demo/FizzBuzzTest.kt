@@ -29,4 +29,10 @@ class FizzBuzzTest {
         val actual = fizzbuzz.getResult(4)
         assertThat(actual).isEqualTo("4")
     }
+
+    @Test
+    fun should_Return_Buzz_When_Five() {
+        val actual = fizzbuzz.getResult(5)
+        assertThat(actual).isEqualTo("buzz")
+    }
 }
