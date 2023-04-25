@@ -10,7 +10,7 @@ class Fizzbuzz {
             return "fizz"
         }
 
-        if (input == 5) {
+        if (input % 5 == 0) {
             return "buzz"
         }
 

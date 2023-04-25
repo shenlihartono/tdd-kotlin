@@ -30,10 +30,15 @@ class FizzBuzzTest {
         assertThat(actual).isEqualTo(expected)
     }
 
-    @Test
-    fun should_Return_Buzz_When_Five() {
-        val actual = fizzbuzz.getResult(5)
-        assertThat(actual).isEqualTo("buzz")
+    @ParameterizedTest
+    @CsvSource(
+        "5, buzz",
+        "10, buzz",
+        "20, buzz"
+    )
+    fun should_Return_Buzz_When_DivisibleByFive(input: Int, expected: String) {
+        val actual = fizzbuzz.getResult(input)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
