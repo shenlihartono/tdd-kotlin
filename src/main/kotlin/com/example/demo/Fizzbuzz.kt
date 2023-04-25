@@ -6,7 +6,7 @@ class Fizzbuzz {
             return "fizzbuzz"
         }
 
-        if (input == 3) {
+        if (input % 3 == 0) {
             return "fizz"
         }
 
