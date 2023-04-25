@@ -17,4 +17,11 @@ class FizzBuzzTest {
         val actual = fizzbuzz.getResult(2)
         assertEquals("2", actual)
     }
+
+    @Test
+    fun should_Return_Fizz_When_Three() {
+        val fizzbuzz = Fizzbuzz()
+        val actual = fizzbuzz.getResult(3)
+        assertEquals("fizz", actual)
+    }
 }
