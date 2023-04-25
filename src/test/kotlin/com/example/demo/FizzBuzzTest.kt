@@ -1,27 +1,26 @@
 package com.example.demo
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.assertj.core.api.AssertionsForClassTypes.assertThat
 import org.junit.jupiter.api.Test
 
 class FizzBuzzTest {
+    private val fizzbuzz = Fizzbuzz()
+
     @Test
     fun should_Return_One() {
-        val fizzbuzz = Fizzbuzz()
         val actual = fizzbuzz.getResult(1)
-        assertEquals("1", actual)
+        assertThat(actual).isEqualTo("1")
     }
 
     @Test
     fun should_Return_Two() {
-        val fizzbuzz = Fizzbuzz()
         val actual = fizzbuzz.getResult(2)
-        assertEquals("2", actual)
+        assertThat(actual).isEqualTo("2")
     }
 
     @Test
     fun should_Return_Fizz_When_Three() {
-        val fizzbuzz = Fizzbuzz()
         val actual = fizzbuzz.getResult(3)
-        assertEquals("fizz", actual)
+        assertThat(actual).isEqualTo("fizz")
     }
 }
