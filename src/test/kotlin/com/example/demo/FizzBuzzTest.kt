@@ -10,4 +10,11 @@ class FizzBuzzTest {
         val actual = fizzbuzz.getResult(1)
         assertEquals("1", actual)
     }
+
+    @Test
+    fun should_Return_Two() {
+        val fizzbuzz = Fizzbuzz()
+        val actual = fizzbuzz.getResult(2)
+        assertEquals("2", actual)
+    }
 }
