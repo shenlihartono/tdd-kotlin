@@ -2,32 +2,27 @@ package com.example.demo
 
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 
 class FizzBuzzTest {
     private val fizzbuzz = Fizzbuzz()
 
-    @Test
-    fun should_Return_One() {
-        val actual = fizzbuzz.getResult(1)
-        assertThat(actual).isEqualTo("1")
-    }
-
-    @Test
-    fun should_Return_Two() {
-        val actual = fizzbuzz.getResult(2)
-        assertThat(actual).isEqualTo("2")
+    @ParameterizedTest
+    @CsvSource(
+        "1, 1",
+        "2, 2",
+        "4, 4"
+    )
+    fun should_Return_The_Same(input: Int, expected: String) {
+        val actual = fizzbuzz.getResult(input)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
     fun should_Return_Fizz_When_Three() {
         val actual = fizzbuzz.getResult(3)
         assertThat(actual).isEqualTo("fizz")
-    }
-
-    @Test
-    fun should_Return_Four() {
-        val actual = fizzbuzz.getResult(4)
-        assertThat(actual).isEqualTo("4")
     }
 
     @Test
